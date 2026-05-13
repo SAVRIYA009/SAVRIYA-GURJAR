@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gym Power</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      background:black;
+      color:white;
+    }
+
+    .gym-section{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:40px;
+    }
+
+    .gym-section h1{
+      font-size:70px;
+      color:red;
+      margin-bottom:20px;
+    }
+
+    .gym-section p{
+      max-width:700px;
+      line-height:1.8;
+      color:#c5c5c5;
+      font-size:20px;
+      margin-bottom:30px;
+    }
+
+    .gym-section button{
+      padding:15px 35px;
+      border:none;
+      border-radius:50px;
+      background:red;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    .gym-section button:hover{
+      background:darkred;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <section class="gym-section">
+
+    <h1>
+      GYM POWER
+    </h1>
+
+    <p>
+      Welcome to the ultimate fitness and bodybuilding community. 
+      Here you can explore workout routines, gym motivation, fitness tips, diet plans and powerful transformation content.
+    </p>
+
+    <button onclick="goHome()">
+      Back To Home
+    </button>
+
+  </section>
+
+  <script>
+
+    function goHome(){
+
+      window.location.href = "index.html";
+
+    }
+
+  </script>
+
+</body>
+</html>
