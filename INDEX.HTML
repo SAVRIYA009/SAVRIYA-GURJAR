@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Savriya Gurjar | Viral Creator Network</title>
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#ff33001e,transparent 20%),
+    radial-gradient(circle at bottom right,#ff88001e,transparent 20%),
+    #050505;
+
+    color:white;
+    overflow-x:hidden;
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0a0a0a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#ff3c00,#ff9900);
+    border-radius:20px;
+}
+
+/* LOADING SCREEN */
+
+.loader{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    flex-direction:column;
+}
+
+.loader h1{
+    font-size:50px;
+    color:#ff3c00;
+    text-shadow:0 0 20px #ff3300;
+    animation:pulse 1s infinite;
+}
+
+.loader p{
+    color:#aaa;
+    margin-top:15px;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* FLOATING BG */
+
+.bg-blur1,
+.bg-blur2{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+.bg-blur1{
+    width:300px;
+    height:300px;
+    background:#ff3300;
+    top:-100px;
+    left:-100px;
+}
+
+.bg-blur2{
+    width:300px;
+    height:300px;
+    background:#ff9900;
+    bottom:-100px;
+    right:-100px;
+}
+
+/* NAVBAR */
+
+nav{
+
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,0.03);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+
+    font-size:32px;
+    font-weight:800;
+
+    color:#ff3c00;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 10px #ff3300,
+    0 0 30px #ff3300;
+}
+
+.search-box{
+    width:40%;
+    position:relative;
+}
+
+.search-box input{
+
+    width:100%;
+    padding:15px 22px;
+
+    border:none;
+    outline:none;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+}
+
+.search-box input::placeholder{
+    color:#999;
+}
+
+.telegram-btn{
+
+    padding:14px 30px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff3c00,#ff9900);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    box-shadow:
+    0 0 20px rgba(255,60,0,0.4);
+}
+
+.telegram-btn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+    0 0 40px rgba(255,60,0,0.8);
+}
+
+/* HERO */
+
+.hero{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:80px;
+
+    padding:160px 8% 100px;
+
+    flex-wrap:wrap;
+}
+
+.hero-left{
+    position:relative;
+}
+
+.hero-left img{
+
+    width:370px;
+    height:370px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 40px rgba(255,60,0,0.5),
+    0 0 80px rgba(255,60,0,0.2);
+
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.online-dot{
+
+    position:absolute;
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:#00ff40;
+
+    bottom:35px;
+    right:35px;
+
+    border:4px solid black;
+
+    box-shadow:0 0 20px #00ff40;
+}
+
+.hero-right{
+    max-width:650px;
+}
+
+.hero-right h1{
+
+    font-size:78px;
+    line-height:1.05;
+
+    margin-bottom:25px;
+
+    background:linear-gradient(to right,#ffffff,#ff4d00);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-right p{
+
+    color:#c6c6c6;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.watch-btn{
+
+    background:linear-gradient(45deg,#ff3c00,#ff8800);
+
+    color:white;
+
+    box-shadow:
+    0 0 20px rgba(255,60,0,0.4);
+}
+
+.watch-btn:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+    box-shadow:
+    0 0 40px rgba(255,60,0,0.8);
+}
+
+.community-btn{
+
+    background:rgba(255,255,255,0.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.community-btn:hover{
+    transform:translateY(-8px);
+}
+
+/* STATS */
+
+.stats{
+
+    width:100%;
+
+    padding:20px 8% 80px;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    transition:0.4s;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(255,60,0,0.2);
+}
+
+.stat-card h1{
+
+    font-size:55px;
+
+    color:#ff3c00;
+
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#c4c4c4;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:58px;
+
+    margin-bottom:70px;
+
+    background:linear-gradient(to right,#ff3c00,#ff9900);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+/* ARTICLE */
+
+.article-section{
+    width:100%;
+    padding:80px 8%;
+}
+
+.article-box{
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(18px);
+
+    padding:60px;
+
+    border-radius:35px;
+}
+
+.article-box h1{
+
+    font-size:48px;
+
+    margin-bottom:30px;
+
+    color:#ff3c00;
+}
+
+.article-box p{
+
+    color:#c8c8c8;
+
+    line-height:2;
+
+    margin-bottom:25px;
+
+    font-size:17px;
+}
+
+/* GRID SECTIONS */
+
+/* SLIDER ROWS */
+
+.highlight-grid,
+.activity-grid{
+
+    display:flex;
+
+    gap:25px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    padding-bottom:15px;
+
+    scroll-snap-type:x mandatory;
+}
+
+/* HIDE SCROLLBAR */
+
+.highlight-grid::-webkit-scrollbar,
+.activity-grid::-webkit-scrollbar{
+    display:none;
+}
+
+/* CARD SIZE */
+
+.highlight-card,
+.activity-card{
+
+    min-width:320px;
+
+    flex-shrink:0;
+
+    scroll-snap-align:start;
+}
+
+/* OTHER GRIDS */
+
+.value-grid,
+.brand-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+}
+/* CTA */
+
+.cta{
+    width:100%;
+    padding:100px 8%;
+}
+
+.cta-box{
+
+    background:
+    linear-gradient(145deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.01));
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    padding:80px 40px;
+
+    border-radius:40px;
+
+    text-align:center;
+}
+
+.cta-box h1{
+
+    font-size:60px;
+
+    margin-bottom:25px;
+}
+
+.cta-box p{
+
+    color:#c5c5c5;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+.cta-box button{
+
+    padding:17px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff3c00,#ff9900);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    font-weight:600;
+}
+
+/* FOOTER */
+
+footer{
+
+    width:100%;
+
+    padding:70px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    background:#080808;
+}
+
+.social-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-bottom:30px;
+}
+
+.social-icons a{
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.03);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    transition:0.4s;
+}
+
+.social-icons a:hover{
+
+    transform:translateY(-10px) scale(1.15);
+
+    background:#ff3c00;
+
+    box-shadow:
+    0 0 20px #ff3300,
+    0 0 40px #ff3300,
+    0 0 60px #ff3300;
+}
+
+footer p{
+    color:#a4a4a4;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-right h1{
+        font-size:52px;
+    }
+
+    .hero-left img{
+        width:280px;
+        height:280px;
+    }
+
+    .section-title{
+        font-size:40px;
+    }
+
+    .cta-box h1{
+        font-size:40px;
+    }
+
+    .article-box{
+        padding:35px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- LOADER -->
+
+<div class="loader" id="loader">
+
+    <h1>SAVRIYA</h1>
+    <p>Loading Viral Experience...</p>
+
+</div>
+
+<!-- BG -->
+
+<div class="bg-blur1"></div>
+<div class="bg-blur2"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        SAVRIYA
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search creators, videos, tools...">
+    </div>
+
+    <button class="telegram-btn">
+        Join Telegram
+    </button>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <img src="myphoto.jpg" alt="">
+
+        <div class="online-dot"></div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <h1>
+            Building Viral Attention Across The Internet
+        </h1>
+
+        <p>
+            Savriya Gurjar is creating a next-generation creator ecosystem powered by viral content, community systems, creator branding, Telegram traffic and multi-platform digital growth strategies.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="watch-btn" onclick="openGymPage()">
+                Watch Content
+            </button>
+
+            <button class="community-btn">
+                Join Community
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <h1>120M+</h1>
+            <p>Total Views</p>
+        </div>
+
+        <div class="stat-card">
+            <h1>500K+</h1>
+            <p>Audience Network</p>
+        </div>
+
+        <div class="stat-card">
+            <h1>100+</h1>
+            <p>Traffic Members</p>
+        </div>
+
+        <div class="stat-card">
+            <h1>24/7</h1>
+            <p>Creator Activity</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ARTICLE -->
+
+<section class="article-section">
+
+    <div class="article-box">
+
+        <h1>
+            The Future Of Creator Ecosystems
+        </h1>
+
+        <p>
+            In the modern internet era, creators are becoming full-scale digital brands. Platforms like Instagram, YouTube, Telegram and websites are no longer separate systems — they work together as one connected ecosystem. A creator today is not only someone who uploads content. A creator is a community builder, a storyteller, a traffic generator and a digital entrepreneur.
+        </p>
+
+        <p>
+            Attention is now the most valuable currency online. Millions of users scroll every day searching for entertainment, inspiration and knowledge. The creators who understand audience psychology, branding and viral systems are the ones building the future of the digital world.
+        </p>
+
+        <p>
+            Smart creator networks focus on more than views. They build strong communities, traffic funnels, content systems and audience trust. This creates long-term growth instead of temporary virality. With the right strategy, creators can launch products, promote brands, grow communities and dominate multiple platforms at once.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- HIGHLIGHTS -->
+
+<section class="highlight">
+
+    <h1 class="section-title">
+        Creator Highlights
+    </h1>
+
+    <div class="highlight-grid">
+
+        <div class="highlight-card">
+            <h2>120M+</h2>
+            <p>Total Viral Content Reach Across Platforms</p>
+        </div>
+
+        <div class="highlight-card">
+            <h2>500K+</h2>
+            <p>Active Audience Community Network</p>
+        </div>
+
+        <div class="highlight-card">
+            <h2>100+</h2>
+            <p>Traffic Distribution Team Members</p>
+        </div>
+
+        <div class="highlight-card">
+            <h2>24/7</h2>
+            <p>Digital Creator Activity & Engagement</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ACTIVITY -->
+
+<section class="activity">
+
+    <h1 class="section-title">
+        What We Build
+    </h1>
+
+    <div class="activity-grid">
+
+        <div class="activity-card">
+
+            <h3>Viral Reels</h3>
+
+            <p>
+                High-retention short videos designed to maximize attention and organic reach.
+            </p>
+
+        </div>
+
+        <div class="activity-card">
+
+            <h3>Telegram Network</h3>
+
+            <p>
+                Strong creator communities and audience retention systems for traffic growth.
+            </p>
+
+        </div>
+
+        <div class="activity-card">
+
+            <h3>Brand Promotion</h3>
+
+            <p>
+                Digital promotions for products, tools and online businesses across creator audiences.
+            </p>
+
+        </div>
+
+        <div class="activity-card">
+
+            <h3>AI Creator Tools</h3>
+
+            <p>
+                Smart automation and AI systems for editing, growth and creator scaling.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VALUE -->
+
+<section class="value-section">
+
+    <h1 class="section-title">
+        Useful For Audience
+    </h1>
+
+    <div class="value-grid">
+
+        <div class="value-card">
+
+            <h3>🚀 Earning Tips</h3>
+
+            <p>
+                Learn social media growth and online income systems.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>🎬 Editing Resources</h3>
+
+            <p>
+                Trending transitions, reel packs and editing assets.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>🤖 AI Tools</h3>
+
+            <p>
+                Explore powerful AI tools for creators and content automation.
+            </p>
+
+        </div>
+
+        <div class="value-card">
+
+            <h3>📈 Growth Secrets</h3>
+
+            <p>
+                Smart strategies used to scale creators and audience engagement.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BRANDS -->
+
+<section class="brands">
+
+    <h1 class="section-title">
+        Featured Promotions
+    </h1>
+
+    <div class="brand-grid">
+
+        <div class="brand-card">
+
+            <img src="myphoto.jpg" alt="">
+
+            <h3>Digital Growth System</h3>
+
+            <p>
+                Creator growth systems designed for engagement, reach and viral performance.
+            </p>
+
+            <button>
+                Explore Now
+            </button>
+
+        </div>
+
+        <div class="brand-card">
+
+            <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1200" alt="">
+
+            <h3>AI Creator Toolkit</h3>
+
+            <p>
+                Trending AI resources and creator automation tools for smart workflows.
+            </p>
+
+            <button>
+                View Tools
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <h1>
+            JOIN THE VIRAL COMMUNITY
+        </h1>
+
+        <p>
+            Connect with the creator ecosystem and become part of the next digital movement.
+        </p>
+
+        <button>
+            JOIN NOW
+        </button>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+
+    </div>
+
+    <p>
+        © 2026 Savriya Gurjar • Viral Creator Network
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document.getElementById("loader").style.display="none";
+
+    },1500);
+
+});
+
+/* OPEN PAGE */
+
+function openGymPage(){
+
+    window.location.href="gym.html";
+
+}
+
+/* SCROLL ANIMATION */
+
+window.addEventListener("scroll",()=>{
+
+    const cards=document.querySelectorAll(
+    ".highlight-card,.activity-card,.value-card,.brand-card"
+    );
+
+    cards.forEach(card=>{
+
+        const cardTop=card.getBoundingClientRect().top;
+
+        if(cardTop < window.innerHeight - 100){
+
+            card.style.opacity="1";
+            card.style.transform="translateY(0px)";
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
